@@ -2627,32 +2627,30 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
         className="flex-1 flex flex-col"
         style={{ position: "relative", overflow: "hidden" }}
       >
-        {/* Light blue-tinted background wash */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(160deg,#e8f0fe 0%,#f8faff 55%,#fff7ed 100%)",
-            zIndex: 0,
-          }}
-        />
-
-        {/* Illustration */}
-        <div
-          className="flex-1 flex items-end justify-center px-2 pb-0"
-          style={{ position: "relative", zIndex: 1 }}
-        >
+        {/* Full-width Illustration */}
+        <div className="flex-1 w-full" style={{ position: "relative", zIndex: 1 }}>
           <img
             src={heroImg}
             alt="Cabin Track with RFID"
             style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
               width: "100%",
               height: "100%",
-              maxHeight: "320px",
-              objectFit: "contain",
-              display: "block",
-              mixBlendMode: "multiply",
+              objectFit: "cover",
+              objectPosition: "center top",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: "60px",
+              background: "linear-gradient(to bottom, rgba(248, 250, 255, 0) 0%, #f8faff 100%)",
+              zIndex: 2,
             }}
           />
         </div>
