@@ -2618,7 +2618,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
     e.preventDefault()
     nik === "240315" && pin === "1234"
       ? onLogin()
-      : setErr("NIK atau PIN tidak valid.")
+      : setErr("Invalid NIK or PIN.")
   }
   return (
     <div className="flex flex-col h-full" style={{ background: "#f8faff" }}>
@@ -3567,9 +3567,9 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
             className="leading-tight"
             style={{ ...TS["2xl"], fontWeight: 700, color: T.text }}
           >
-            Selamat datang,
+            Welcome,
             <br />
-            Teknisi!
+            Technician!
           </p>
           <p className="mt-1.5" style={{ ...TS.sm, color: T.muted }}>
             Cabin Repair Monitoring System
@@ -3646,7 +3646,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
               boxShadow: `0 6px 16px ${T.orange}44`,
             }}
           >
-            Masuk
+            Login
           </button>
         </form>
         <p className="text-center mt-4" style={{ ...TS.xs, color: T.muted }}>
