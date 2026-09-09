@@ -2657,28 +2657,6 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
 
         {/* App brand */}
         <div className="px-6 pb-6" style={{ position: "relative", zIndex: 1 }}>
-          <div className="flex items-center gap-3 mb-3">
-            <div
-              className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-white"
-              style={{
-                background: T.orange,
-                boxShadow: `0 6px 16px ${T.orange}44`,
-              }}
-            >
-              <Ic.Scan s={20} />
-            </div>
-            <span
-              style={{
-                ...TS.xs,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                color: T.sub,
-                textTransform: "uppercase",
-              }}
-            >
-              CabinTrack
-            </span>
-          </div>
           <p
             className="leading-tight"
             style={{ ...TS["2xl"], fontWeight: 700, color: T.text }}
@@ -2686,9 +2664,6 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
             Welcome,
             <br />
             Technician!
-          </p>
-          <p className="mt-1.5" style={{ ...TS.sm, color: T.muted }}>
-            Cabin Repair Monitoring System
           </p>
         </div>
       </div>
