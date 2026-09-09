@@ -1,0 +1,11 @@
+{
+  "title": "Monitoring Ticket",
+  "description": "Streamline ticketing processes with an intuitive mobile app that integrates RFID technology, enhancing user experience for event attendees and organizers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
