@@ -2665,6 +2665,12 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
         }}
       >
         <form onSubmit={submit} className="space-y-4">
+          <p
+            className="mb-4 leading-tight"
+            style={{ ...TS["xl"], fontWeight: 700, color: T.text }}
+          >
+            Login with your Account
+          </p>
           <div>
             <label
               className="block mb-2 uppercase tracking-wide"
