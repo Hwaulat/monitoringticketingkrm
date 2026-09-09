@@ -2645,7 +2645,14 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
           <img
             src="/hero.jpg"
             alt="Cabin Track with RFID"
-            style={{ width: "100%", height: "100%", maxHeight: "320px", objectFit: "contain", display: "block", mixBlendMode: "multiply" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              maxHeight: "320px",
+              objectFit: "contain",
+              display: "block",
+              mixBlendMode: "multiply",
+            }}
           />
         </div>
 
