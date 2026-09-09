@@ -12,7 +12,7 @@ import {
 // v2 — Inter + design system
 
 // ─── Types ────────────────────────────────────────────────────────────────────
-type Screen = "login" | "home" | "scan" | "create_ticket" | "ticket_detail" | "tickets" | "dashboard" | "profil"
+type Screen = "login" | "home" | "scan" | "create_ticket" | "ticket_detail" | "tickets" | "dashboard" | "profile"
 type TicketStatus = "open" | "in_progress" | "on_hold" | "closed"
 type Priority = "low" | "normal" | "high" | "urgent"
 type DamageType = "body" | "interior" | "electrical" | "mechanical" | "paint" | "other"
@@ -1573,7 +1573,7 @@ function TicketDetailScreen({
             >
               {[
                 ["Created", fmtTime(ticket.createdAt)],
-                ["Mulai", ticket.startedAt ? fmtTime(ticket.startedAt) : "—"],
+                ["Start", ticket.startedAt ? fmtTime(ticket.startedAt) : "—"],
                 status === "in_progress" && ticket.startedAt
                   ? ["Ongoing", elapsed(ticket.startedAt)]
                   : [
@@ -2085,7 +2085,13 @@ function DashboardScreen({ tickets }: { tickets: RepairTicket[] }) {
 
         {/* Trend chart */}
         <div className="mb-5">
-          <Card style={{ padding: "16px", border: `1px solid ${T.borderL}`, boxShadow: "none" }}>
+          <Card
+            style={{
+              padding: "16px",
+              border: `1px solid ${T.borderL}`,
+              boxShadow: "none",
+            }}
+          >
             {/* Header */}
             <div className="flex justify-between items-center">
               <p style={{ ...TS.md, fontWeight: 600, color: T.text }}>
@@ -2132,7 +2138,7 @@ function DashboardScreen({ tickets }: { tickets: RepairTicket[] }) {
                     alignItems: "center",
                     gap: "2px",
                     background: "none",
-                    border: "none"
+                    border: "none",
                   }}
                 >
                   View All{" "}
@@ -2527,7 +2533,7 @@ function HomeScreen({
 }
 
 // ─── Profil Screen ────────────────────────────────────────────────────────────
-function ProfilScreen({ onLogout }: { onLogout: () => void }) {
+function ProfileScreen({ onLogout }: { onLogout: () => void }) {
   return (
     <div className="flex flex-col h-full" style={{ background: T.bg }}>
       <div
@@ -3589,7 +3595,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
               type="text"
               inputMode="numeric"
               value={nik}
-              placeholder="Masukkan NIK kamu"
+              placeholder="Enter your NIK"
               onChange={(e) => {
                 setNik(e.target.value)
                 setErr("")
@@ -3663,10 +3669,10 @@ function BottomNav({
 }) {
   const tabs = [
     { id: "home" as Screen, label: "Home", icon: <Ic.Ticket s={22} /> },
-    { id: "tickets" as Screen, label: "Tiket", icon: <Ic.Ticket s={22} /> },
+    { id: "tickets" as Screen, label: "Tickets", icon: <Ic.Ticket s={22} /> },
     // center = FAB
     { id: "dashboard" as Screen, label: "Dashboard", icon: <Ic.Grid s={22} /> },
-    { id: "profil" as Screen, label: "Profil", icon: <Ic.User s={22} /> },
+    { id: "profile" as Screen, label: "Profile", icon: <Ic.User s={22} /> },
   ]
   return (
     <div
@@ -3834,7 +3840,7 @@ export default function App() {
     "home",
     "tickets",
     "dashboard",
-    "profil",
+    "profile",
   ] as Screen[]).includes(screen)
     ? screen
     : "home"
@@ -3891,8 +3897,8 @@ export default function App() {
             />
           )}
           {screen === "dashboard" && <DashboardScreen tickets={tickets} />}
-          {screen === "profil" && (
-            <ProfilScreen onLogout={() => setLoggedIn(false)} />
+          {screen === "profile" && (
+            <ProfileScreen onLogout={() => setLoggedIn(false)} />
           )}
         </div>
         {showNav && (
