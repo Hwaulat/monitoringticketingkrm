@@ -2655,17 +2655,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
           />
         </div>
 
-        {/* App brand */}
-        <div className="px-6 pb-6" style={{ position: "relative", zIndex: 1 }}>
-          <p
-            className="leading-tight"
-            style={{ ...TS["2xl"], fontWeight: 700, color: T.text }}
-          >
-            Welcome,
-            <br />
-            Technician!
-          </p>
-        </div>
+
       </div>
       <div
         className="px-5 pb-10 pt-6"
