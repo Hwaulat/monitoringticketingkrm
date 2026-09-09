@@ -2602,7 +2602,7 @@ function ProfileScreen({ onLogout }: { onLogout: () => void }) {
             color: T.red,
           }}
         >
-          Keluar dari Akun
+          Sign Out
         </button>
       </div>
     </div>
@@ -3572,7 +3572,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
             Teknisi!
           </p>
           <p className="mt-1.5" style={{ ...TS.sm, color: T.muted }}>
-            Sistem Monitoring Perbaikan Cabin
+            Cabin Repair Monitoring System
           </p>
         </div>
       </div>
