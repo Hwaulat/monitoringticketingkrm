@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react"
+import heroImg from "./assets/hero.jpg"
 import {
   BarChart,
   Bar,
@@ -2643,7 +2644,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
           style={{ position: "relative", zIndex: 1 }}
         >
           <img
-            src="/hero.jpg"
+            src={heroImg}
             alt="Cabin Track with RFID"
             style={{
               width: "100%",
